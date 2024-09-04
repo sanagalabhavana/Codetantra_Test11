@@ -1,0 +1,36 @@
+package Day_11_Interface;
+interface Reliancemart{
+	int getPoints();
+}
+interface JioSim{
+	boolean isJioUser();
+}
+
+public class Multiple_Inheritance_with_interfaces implements Reliancemart, JioSim{
+	private int points;
+	private boolean isJioUser;
+	public Multiple_Inheritance_with_interfaces(int points,boolean isJioUser) {
+		this.points=points;
+		this.isJioUser=isJioUser;
+	}
+	
+	public int getPoints() {
+		return points;
+	}
+	public boolean isJioUser() {
+		return isJioUser;
+	}
+ public static void main(String[] args) {
+	 
+	 int points=Integer.parseInt(args[0]);
+	 boolean isJioUser =Boolean.parseBoolean(args[1]);
+	 
+	 Multiple_Inheritance_with_interfaces m=new Multiple_Inheritance_with_interfaces(points,isJioUser);
+	 if(m.getPoints()>1000 && m.isJioUser()) {
+		 System.out.println("Congratulations! You are eligible for a gift hamper.");
+	 }else {
+		 System.out.println("Sorry, you are not eligible for a gift hamper.");
+	 }
+	 
+ }
+}
