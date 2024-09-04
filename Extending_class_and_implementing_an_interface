@@ -1,0 +1,23 @@
+package Day_11_Interface;
+
+interface Intern{
+	void internSalary(int hike);
+}
+class Developer{
+	void developerSalary(int hike) {
+		System.out.println("Hike of Developer:"+hike);
+	}
+}
+public class Extending_class_and_implementing_an_interface implements Intern {
+   public void internSalary(int hike) {
+	   System.out.println("Hike of Intern:"+(hike/2));
+   }
+	public static void main(String[] args) {
+		Extending_class_and_implementing_an_interface e=new Extending_class_and_implementing_an_interface();
+		int hike=Integer.parseInt(args[0]);
+		e.internSalary(hike);
+		Developer d=new Developer();
+		d.developerSalary(hike);
+	}
+
+}
