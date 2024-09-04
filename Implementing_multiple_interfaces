@@ -1,0 +1,27 @@
+package Day_11_Interface;
+interface bike{
+	void bikeAvgSpeed(int s1); 
+	
+}
+interface car{
+	void carAvgSpeed(int s2);
+}
+
+public class Implementing_multiple_interfaces implements bike,car{
+	public void bikeAvgSpeed(int s1) {
+		System.out.println("do not cross the bike speed"+s1);
+	}
+	public void carAvgSpeed(int s2) {
+		System.out.println("do not cross the car speed"+s2);
+	}
+
+	public static void main(String[] args) {
+		Implementing_multiple_interfaces v=new Implementing_multiple_interfaces();
+		int s1=Integer.parseInt(args[0]);
+		int s2=Integer.parseInt(args[1]);
+		v.bikeAvgSpeed(s1);
+		v.carAvgSpeed(s2);
+
+	}
+
+}
