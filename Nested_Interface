@@ -1,0 +1,36 @@
+package Day_11_Interface;
+interface OuterInterface{
+	String outerMethod(int time);
+	
+	interface InnerInterface{
+		void innerMethod(String name);
+	}
+}
+class Myclass implements OuterInterface{
+	public String outerMethod(int time) {
+		if(time>=0 && time<=11) {
+			return "Good Morning";
+		}else if(time>=12 && time<=17) {
+			return "Good Afternoon";
+		}else if(time>=18 && time<=24) {
+			return "Good Evening";
+		}else {
+			return "Welcome!";
+		}
+	}
+	public void innerMethod(String greeting) {
+		System.out.println(greeting+" This is IDBI bank");
+	}
+}
+
+public class Nested_Interface {
+
+	public static void main(String[] args) {
+		int time=Integer.parseInt(args[0]);
+		Myclass m=new Myclass();
+		String greeting =m.outerMethod(time);
+		m.innerMethod(greeting);
+
+	}
+
+}
